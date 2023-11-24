@@ -6,6 +6,7 @@
   &__display {
     grid-column: 1 / 2;
     grid-row: 1 / 2;
+    text-align: center;
   }
 
   &__buttons {
@@ -16,8 +17,6 @@
     grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
     grid-gap: 10px;
-    
-
 
     #AC {
       grid-column: 1/2;
