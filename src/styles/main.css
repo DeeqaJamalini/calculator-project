@@ -1,0 +1,93 @@
+.calculator {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 2fr;
+}
+.calculator__display {
+  grid-column: 1/2;
+  grid-row: 1/2;
+}
+.calculator__buttons {
+  grid-column: 1/2;
+  grid-row: 2/3;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+  grid-gap: 10px;
+}
+.calculator__buttons #AC {
+  grid-column: 1/2;
+  grid-row: 1/2;
+}
+.calculator__buttons #plus-minus {
+  grid-column: 2/3;
+  grid-row: 1/2;
+}
+.calculator__buttons #percentage {
+  grid-column: 3/4;
+  grid-row: 1/2;
+}
+.calculator__buttons #divide {
+  grid-column: 4/5;
+  grid-row: 1/2;
+}
+.calculator__buttons #one {
+  grid-column: 1/2;
+  grid-row: 2/3;
+}
+.calculator__buttons #two {
+  grid-column: 2/3;
+  grid-row: 2/3;
+}
+.calculator__buttons #three {
+  grid-column: 3/4;
+  grid-row: 2/3;
+}
+.calculator__buttons #times {
+  grid-column: 4/5;
+  grid-row: 2/3;
+}
+.calculator__buttons #four {
+  grid-column: 1/2;
+  grid-row: 3/4;
+}
+.calculator__buttons #five {
+  grid-column: 2/3;
+  grid-row: 3/4;
+}
+.calculator__buttons #six {
+  grid-column: 3/4;
+  grid-row: 3/4;
+}
+.calculator__buttons #minus {
+  grid-column: 4/5;
+  grid-row: 3/4;
+}
+.calculator__buttons #seven {
+  grid-column: 1/2;
+  grid-row: 4/5;
+}
+.calculator__buttons #eight {
+  grid-column: 2/3;
+  grid-row: 4/5;
+}
+.calculator__buttons #nine {
+  grid-column: 3/4;
+  grid-row: 4/5;
+}
+.calculator__buttons #plus {
+  grid-column: 4/5;
+  grid-row: 4/5;
+}
+.calculator__buttons #zero {
+  grid-column: 1/2;
+  grid-row: 5/6;
+}
+.calculator__buttons #decimal {
+  grid-column: 2/3;
+  grid-row: 5/6;
+}
+.calculator__buttons #equals {
+  grid-column: 3/5;
+  grid-row: 5/6;
+}/*# sourceMappingURL=main.css.map */
