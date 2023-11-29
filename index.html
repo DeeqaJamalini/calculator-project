@@ -11,10 +11,14 @@
     <heading class="title">Calculator</heading>
     <section class="calculator">
       <div class="calculator__display">
-        <p class="calculator__display--calculation">calculation will be here</p>
+        <p class="calculator__display--calculation" id="display">
+          0
+        </p>
       </div>
       <div class="calculator__buttons">
-        <button class="calculator__button calculator__button--operator" id="AC">
+        <button
+          class="calculator__button calculator__button--operator"
+          id="clear">
           AC
         </button>
         <button
@@ -34,8 +38,8 @@
         </button>
         <button
           class="calculator__button calculator__button--operator"
-          id="times">
-          X
+          id="multiply">
+          *
         </button>
         <button
           class="calculator__button calculator__button--operator"
@@ -53,40 +57,40 @@
           =
         </button>
 
-        <button class="calculator__button calculator__button--number" id="one">
+        <button class="calculator__button calculator__button--number number" id="one">
           1
         </button>
-        <button class="calculator__button calculator__button--number" id="two">
+        <button class="calculator__button calculator__button--number number" id="two">
           2
         </button>
         <button
-          class="calculator__button calculator__button--number"
+          class="calculator__button calculator__button--number number"
           id="three">
           3
         </button>
-        <button class="calculator__button calculator__button--number" id="four">
+        <button class="calculator__button calculator__button--number number" id="four">
           4
         </button>
-        <button class="calculator__button calculator__button--number" id="five">
+        <button class="calculator__button calculator__button--number number" id="five">
           5
         </button>
-        <button class="calculator__button calculator__button--number" id="six">
+        <button class="calculator__button calculator__button--number number" id="six">
           6
         </button>
         <button
-          class="calculator__button calculator__button--number"
+          class="calculator__button calculator__button--number number"
           id="seven">
           7
         </button>
         <button
-          class="calculator__button calculator__button--number"
+          class="calculator__button calculator__button--number number"
           id="eight">
           8
         </button>
-        <button class="calculator__button calculator__button--number" id="nine">
+        <button class="calculator__button calculator__button--number number" id="nine">
           9
         </button>
-        <button class="calculator__button calculator__button--number" id="zero">
+        <button class="calculator__button calculator__button--number number" id="zero">
           0
         </button>
         <button
