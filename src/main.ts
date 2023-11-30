@@ -14,6 +14,7 @@ const clearButton = document.querySelector("#clear") as HTMLButtonElement;
 const plusMinusButton = document.querySelector(
   "#plus-minus"
 ) as HTMLButtonElement;
+const percentButton = document.querySelector("#percent") as HTMLButtonElement;
 const decimalButton = document.querySelector("#decimal") as HTMLButtonElement;
 const numberOneButton = document.querySelector("#one") as HTMLButtonElement;
 const numberTwoButton = document.querySelector("#two") as HTMLButtonElement;
@@ -32,36 +33,49 @@ const updateDisplay = () => {
   display.innerHTML = currentInput.toString();
 };
 const handleNumberButtonClick = (num: number) => {
-  // Check if we are in the middle of an operation
   if (isInMiddleOfOperation) {
-    // If yes, set currentInput to the clicked number
+    console.log("in middle of operation");
+
     currentInput = num;
-    // Reset the flag indicating that we are in the middle of an operation
+
     isInMiddleOfOperation = false;
   } else {
-    // If not in the middle of an operation, update currentInput by concatenating the clicked number
+    console.log("not in middle of operation");
+
     currentInput = currentInput * 10 + num;
   }
 
-  // Check if an operator was clicked
   if (operator !== "") {
-    // If yes, update currentSum with the currentInput value
-    currentSum = currentInput;
+    performOperation();
+
+    operator = "";
   }
 
-  // Update the display with the currentInput value
   updateDisplay();
 
-  // Log the currentInput value to the console
   console.log(currentInput);
 };
+
+updateDisplay();
+
+if (operator !== "") {
+  console.log("operator was clicked");
+
+  console.log(currentSum);
+
+  operator = "";
+}
+
+console.log(currentInput);
 
 const handleOperatorButtonClick = (clickedOperator: string) => {
   if (isInMiddleOfOperation) {
     operator = clickedOperator;
+    console.log("in middle of operation and operator clicked");
   } else {
     if (operator !== "") {
       performOperation();
+      console.log("operator was clicked and performOperation was called");
     }
     operator = clickedOperator;
     currentSum = currentInput;
@@ -73,69 +87,81 @@ const handleOperatorButtonClick = (clickedOperator: string) => {
 
 const plus = (currentSum: number, currentInput: number) =>
   (currentSum = currentSum + currentInput);
+console.log(currentSum);
 
 const minus = (currentSum: number, currentInput: number) =>
   (currentSum = currentSum - currentInput);
-
+console.log(currentSum);
 const multiply = (currentSum: number, currentInput: number) =>
   (currentSum = currentSum * currentInput);
+console.log(currentSum);
 const divide = (currentSum: number, currentInput: number) =>
   (currentSum = currentSum / currentInput);
+console.log(currentSum);
 
 const plusMinus = (currentInput: number) => (currentSum = currentInput * -1);
+
+const percent = (currentInput: number) => (currentSum = currentInput / 100);
+
+const equals = (currentInput: number) => (currentSum = currentInput);
 
 const performOperation = () => {
   console.log("performing");
   switch (operator) {
     case "plus":
       currentSum = plus(currentSum, currentInput);
+      console.log("plus case");
       console.log(currentSum);
-      currentInput = 0;
       break;
     case "minus":
       currentSum = minus(currentSum, currentInput);
+      console.log("minus case");
       console.log(currentSum);
-      currentInput = 0;
       break;
     case "multiply":
-      currentSum = multiply(currentSum, currentInput);
+      currentSum = currentSum * currentInput;
+      console.log("multiply case");
       console.log(currentSum);
-      currentInput = 0;
       break;
     case "divide":
       currentSum = divide(currentSum, currentInput);
+      console.log("divide case");
       console.log(currentSum);
-
-      currentInput = 0;
       break;
     case "plusMinus":
       currentSum = plusMinus(currentInput);
+      console.log("plusMinus case");
       console.log(currentSum);
-      currentInput = 0;
       break;
+    case "percent":
+      currentSum = percent(currentInput);
+      console.log("percent case");
+      console.log(currentSum);
+      break;
+    case "equals":
+      console.log("equals case");
+      console.log(currentSum);
+      currentSum = equals(currentInput);
   }
 
   currentInput = currentSum;
 
-  // currentInput = 0; // Reset currentInput after performing the operation
   updateDisplay();
   console.log(currentSum);
+  setTimeout(() => console.log(currentSum), 0);
 };
 
-// Handle equals button click separately
 equalsButton.addEventListener("click", () => {
+  console.log("equals button clicked");
   if (isInMiddleOfOperation) {
     performOperation();
+    console.log(currentSum);
     isInMiddleOfOperation = false;
-    updateDisplay(); // Update the display after performing the operation
+    currentInput = 0;
+    updateDisplay();
   }
 });
 
-// ... (Other event listeners remain the same)
-
-// ... (Event listeners remain the same)
-
-// Add event listeners to operator buttons
 plusButton.addEventListener("click", () => handleOperatorButtonClick("plus"));
 minusButton.addEventListener("click", () => handleOperatorButtonClick("minus"));
 multiplyButton.addEventListener("click", () =>
@@ -144,6 +170,7 @@ multiplyButton.addEventListener("click", () =>
 divideButton.addEventListener("click", () =>
   handleOperatorButtonClick("divide")
 );
+
 numberOneButton.addEventListener("click", () => handleNumberButtonClick(1));
 numberTwoButton.addEventListener("click", () => handleNumberButtonClick(2));
 numberThreeButton.addEventListener("click", () => handleNumberButtonClick(3));
@@ -160,6 +187,7 @@ clearButton.addEventListener("click", () => {
   currentInput = 0;
   operator = "";
   updateDisplay();
+  console.log(currentSum);
 });
 
 plusMinusButton.addEventListener("click", () => {
@@ -168,7 +196,11 @@ plusMinusButton.addEventListener("click", () => {
 });
 
 decimalButton.addEventListener("click", () => {
-  // Handle decimal button click if needed
+  currentInput = currentInput / 10;
+  updateDisplay();
 });
 
-// You may need to handle other button clicks (percentage, etc.) similarly.
+percentButton.addEventListener("click", () => {
+  currentInput = percent(currentInput);
+  updateDisplay();
+});
