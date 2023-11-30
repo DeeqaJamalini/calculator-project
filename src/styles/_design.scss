@@ -1,3 +1,76 @@
+@keyframes pulsate {
+    100% {
+      
+      text-shadow:
+        0 0 4px #15f2fd,   /* Blue lightsaber color */
+        0 0 11px #15f2fd,
+        0 0 19px #15f2fd,
+        0 0 40px #f00,     /* Red lightsaber color */
+        0 0 80px #f00,
+        0 0 90px #f00,
+        0 0 100px #f00,
+        0 0 150px hsl(0, 100%, 50%),
+         0 0 6px #ffe400,      /* Sparks color */
+         0 0 8px #ffe400,
+         0 0 10px #ffe400,
+        
+    }
+    0% {
+      
+      text-shadow:
+        0 0 2px #15f2fd,   /* Blue lightsaber color */
+        0 0 4px #15f2fd,
+        0 0 6px #15f2fd,
+        0 0 10px #f00,     /* Red lightsaber color */
+        0 0 45px #f00,
+        0 0 55px #f00,
+        0 0 70px #f00,
+        0 0 80px #f00,
+        0 0 4px #ffe400,      /* Sparks color */
+        0 0 6px #ffe400,
+        0 0 8px #ffe400,
+        0 0 10px #ffe400,
+        0 0 12px #ffe400,
+        0 0 15px #ffe400,
+        0 0 18px #ffe400,
+        0 0 20px #ffe400,;
+    }
+  }
+  
+  
+  
+
+
+
+
+
+
+body {
+    background-image: url('./images/starbackground.jpg');
+    background-size: cover;
+  }
+
+.title {
+    font-size: 4rem;
+    color: #FFA900;
+    text-align: center;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-weight: 5px;
+    line-height: 1.5em;
+    color: transparent;
+    font-family: 'Gothic A1', sans-serif;
+    
+    -webkit-text-stroke: 1px #FFA900;
+    animation: pulsate 2.5s infinite alternate;
+    color: #FFA900;
+    -webkit-text-stroke: 1px #FFA900;
+}
+
+
 .calculator {
 
     
@@ -7,19 +80,77 @@
     flex-direction: column;
     height: 80vh;
     width: 100vw;
+    
    
+    .calculator__button {
+        background-color: black;
+        color: #FFA900;
+        font-size: 2rem;
+        border-radius: 30px;
+        outline: none;
+        cursor: pointer;
+        box-shadow: 0 0 5px #15f2fd, 0 0 25px #15f2fd;
     
-    
-    
-
-
-
-
-    .calculator__buttons {
-        width: 70%;
-        height: 40%;
-        
+        transition: font-size 0.3s ease, color 0.3s ease; 
+        &:hover {
+            font-size: 3rem; 
+            color: #0fa; 
+            text-shadow:
+                0 0 10px #7d12ff, 
+                0 0 20px #7d12ff,
+                0 0 30px #7d12ff,
+                0 0 40px #7d12ff;
+        }
     }
+    
+    
+
+
+
+    &__display {
+        width: 70%;
+        height: 20%;
+        background-color: #000000;
+        color: #02d5df;
+        font-size: 4rem;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        padding-right: 10px;
+        padding-left: 10px;
+        border-radius: 30px;
+        font-family: 'Gothic A1', sans-serif;
+        animation: pulsate 2.5s infinite alternate;     
+        
+        box-shadow: 0 0 5px #15f2fd,
+        0 0 25px #15f2fd;	
+        
+    //border: 5px solid #FFE81F;
+    }
+
+    &__buttons {
+        width: 70%;
+        height: 70%;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+        grid-gap: 10px;
+        padding: 10px;
+        
+   // border: 5px solid #FFE81F;
+    border-radius: 30px;
+    }
+
+
+
+    .calculator__buttons button:active {
+        background-color: #000000;
+        color: #ffffff;
+    }
+
+
+
+
 
 
     
