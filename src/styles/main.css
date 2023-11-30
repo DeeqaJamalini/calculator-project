@@ -109,7 +109,7 @@ body {
 
 .title {
   font-size: 4rem;
-  color: #FFA900;
+  color: #ffa900;
   text-align: center;
   margin-bottom: 20px;
   display: flex;
@@ -120,10 +120,10 @@ body {
   line-height: 1.5em;
   color: transparent;
   font-family: "Gothic A1", sans-serif;
-  -webkit-text-stroke: 1px #FFA900;
+  -webkit-text-stroke: 1px #ffa900;
   animation: pulsate 2.5s infinite alternate;
-  color: #FFA900;
-  -webkit-text-stroke: 1px #FFA900;
+  color: #ffa900;
+  -webkit-text-stroke: 1px #ffa900;
 }
 
 .calculator {
@@ -136,7 +136,7 @@ body {
 }
 .calculator__button {
   background-color: black;
-  color: #FFA900;
+  color: #ffa900;
   font-size: 2rem;
   border-radius: 30px;
   outline: none;
@@ -181,25 +181,23 @@ body {
 }
 .calculator__vader {
   position: relative;
-  width: 20px; /* Adjust the width as needed */
-  height: 20px; /* Adjust the height as needed */
-  background: url("sith-lord-image.jpg"); /* Replace 'sith-lord-image.jpg' with your image file path */
-  background-size: cover;
-  transition: transform 0.5s ease; /* Adding transition for a smooth effect */
+  width: 20px;
+  height: 20px;
+  transition: transform 0.5s ease;
 }
 .calculator__vader:hover {
-  animation: grow 1s forwards, disappear 1s forwards 3s; /* Grow on hover and disappear after 3 seconds */
+  animation: grow 1s forwards, disappear 1s forwards 3s;
 }
 @keyframes grow {
   0% {
-    transform: scale(1); /* Initial size */
+    transform: scale(1);
   }
   100% {
-    transform: scale(20); /* Grow to 2 times the size */
+    transform: scale(20);
   }
 }
 @keyframes disappear {
   to {
-    opacity: 0; /* Disappear by reducing opacity */
+    opacity: 0;
   }
 }/*# sourceMappingURL=main.css.map */
